@@ -45,5 +45,37 @@ public class JuegoDeCartas {
         agregarCartas("Picas", "Q", 10);
         agregarCartas("Corazones", "K", 10);
     }
-    public
+    public void salir (){
+        System.out.println("Saliendo");
+        System.exit( O);
+    }
+    public void menu (){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println("Menu de opciones:");
+            System.out.println("1) Jugar.");
+            System.out.println("2) Salir");
+            System.out.println("Solo hay dos opciones: ");
+            opcion = Scanner.nextInt();
+            switch (opcion){
+                case 1:
+                    jugar();
+                    salir();
+                case 2:
+                    salir();
+                    System.out.println("Adios");
+                default:
+                    System.out.println("tu opcion no es valida")
+            }
+        }
+    }while (opcion != 2);
+
+    public static void main(String[] args) {
+        JuegoDeCartas juego = new JuegoDeCartas();
+        juego.crearMatrizCartas();
+        juego.inicializarCartasJuego();
+        juego.menu();
+    }
 }
+
